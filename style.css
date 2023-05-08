@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "League Sparta", sans-serif;
+  min-height: 100vh;
+}
+
+:root {
+  --clr-darkgray: hsl(0, 0%, 63%);
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-verydarkgray: hsl(0, 0%, 27%);
+}
+
+@font-face {
+  font-family: "League Sparta", sans-serif;
+  src: url("https://fonts.google.com/specimen/League+Spartan");
+}
+
+/* Utils */
+h1 {
+  font-size: 2rem;
+}
+img {
+  max-width: 100%;
+}
+
+p,
+a {
+  font-size: 0.75rem;
+}
+
+p {
+  color: var(--clr-darkgray);
+  padding: 1rem 0;
+  line-height: 1.25rem;
+}
+
+.front-page {
+  position: relative;
+  background: no-repeat center/cover url("./images/mobile-image-hero-1.jpg");
+  height: 50vh;
+}
+/* Nav */
+nav {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translate(-10%, -10%);
+}
+.hamburger {
+  cursor: pointer;
+}
+/* Nav List */
+.links {
+  display: none;
+}
+.links a {
+  text-decoration: none;
+  color: var(--clr-black);
+  font-weight: bold;
+}
+.active {
+  display: flex !important;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem;
+  justify-content: space-between;
+}
+
+.prev-next-box {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.prev-next-box button {
+  background-color: var(--clr-black);
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+.prev-next-box button:hover {
+  background-color: var(--clr-verydarkgray);
+}
+
+.big-imgs {
+  width: 100%;
+  display: block;
+}
+
+/* ========== Chi siamo ========== */
+.front-slogan,
+.about {
+  padding: 3rem 2rem;
+}
+.shop-now {
+  padding: 1rem 0;
+}
+.shop-now a {
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-black);
+  padding-right: 0.75rem;
+  font-weight: 700;
+}
+.shop-now a:hover {
+  color: var(--clr-darkgray);
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    display: grid;
+    grid-template-rows: 60% 40%;
+  }
+
+  h3,
+  p,
+  a {
+    font-size: 1rem;
+  }
+
+  .big-imgs {
+    height: 100%;
+  }
+  /* Upper */
+  .upper-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  .front-page {
+    width: 60%;
+    height: 100%;
+    background: no-repeat center/cover url("./images/desktop-image-hero-1.jpg");
+  }
+
+  /* Nav List */
+  .hamburger {
+    display: none;
+  }
+  nav {
+    padding: 2rem;
+  }
+  .logo {
+    position: relative;
+    top: 0.2rem;
+  }
+  .links {
+    display: block;
+    padding-left: 3rem;
+  }
+  .links a {
+    color: var(--clr-white);
+    padding: 0 1.5rem;
+    font-weight: 400;
+  }
+  .close {
+    display: none;
+  }
+
+  .front-slogan {
+    width: 40%;
+    padding: 0 5%;
+  }
+  button {
+    padding: 1.5rem 2rem;
+  }
+
+  /* Lower */
+  .lower-section {
+    display: grid;
+    grid-template-columns: 30.3% auto 30.3%;
+  }
+
+  .front-slogan,
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about {
+    padding: 4rem 3rem;
+  }
+
+  .prev-next-box {
+    right: -8.75rem;
+  }
+  .prev-next-box button {
+    padding: 1.125rem 1.75rem;
+  }
+}
